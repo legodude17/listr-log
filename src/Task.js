@@ -72,6 +72,8 @@ class Task extends rx.Subject {
   }
 
   addTask(task) {
+    if (!(task instanceof Task)) task = new Task(task);
+
     if (!this[task.name]) this[task.name] = task;
 
     this._subtasks.push(task);
