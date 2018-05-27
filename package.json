@@ -1,13 +1,16 @@
 {
   "name": "listr-log",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "My best package",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/legodude17/listr-log"
   },
-  "files": ["index.js", "src/*.js"],
+  "files": [
+    "index.js",
+    "src/*.js"
+  ],
   "keywords": [],
   "author": "legodude17",
   "license": "MIT",
