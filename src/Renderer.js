@@ -36,7 +36,11 @@ const getSymbol = task => {
   return ' ';
 };
 
-const getCompletion = task => ` - ${chalk.dim(cliTruncate(task.output, Math.floor(process.stdout.columns / 2)))}`;
+const getCompletion = task => ` - ${
+  chalk.dim(cliTruncate(
+    task.output.split('\n')[0],
+    Math.floor(process.stdout.columns / 2)
+  ))}`;
 
 const renderHelper = (tasks, options, level) => {
   level = level || 0;
