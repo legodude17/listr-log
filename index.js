@@ -3,10 +3,18 @@ const Renderer = require('./src/Renderer');
 
 const ll = { tasks: [] };
 
-ll.start = function start(name, R) {
+ll.start = function start(R) {
   // eslint-disable-next-line import/no-dynamic-require
   if (typeof R === 'string') R = require(R); // eslint-disable-line global-require
   ll.renderer = new (R || Renderer)(ll.tasks);
+  ll.renderer.render();
+};
+
+ll.pause = function pause() {
+  ll.renderer.end();
+};
+
+ll.play = function play() {
   ll.renderer.render();
 };
 
