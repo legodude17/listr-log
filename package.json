@@ -1,6 +1,6 @@
 {
   "name": "listr-log",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "My best package",
   "main": "index.js",
   "repository": {
