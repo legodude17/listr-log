@@ -17,6 +17,11 @@ ll.addTask = t => {
 };
 
 module.exports = new Proxy(ll, {
+  get(obj, key) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) return obj[key];
+    ll.addTask({ name: key, title: key });
+    return obj[key];
+  },
   set(obj, key, val) {
     ll.addTask({ name: key, title: val });
   }

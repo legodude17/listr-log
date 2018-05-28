@@ -60,10 +60,11 @@ class Task extends rx.Subject {
     return this._state === 'FAILED';
   }
 
-  error(err) {
+  error(err, doError) {
     err = typeof err === 'string' ? err : err.message;
     this.setState('FAILED');
     this.output = err;
+    return new Promise((resolve, reject) => setTimeout(() => (doError ? reject(err) : resolve()), 1000));
   }
 
   complete(message) {
