@@ -73,7 +73,7 @@ class Task extends rx.Subject {
   }
 
   addTask(task) {
-    if (!(task instanceof Task)) task = new Task(task);
+    if (!(task instanceof (this.constructor))) task = new (this.constructor)(task);
 
     if (!this[task.name]) this[task.name] = task;
 

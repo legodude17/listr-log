@@ -116,9 +116,9 @@ class UpdateRenderer {
     if (this._id) {
       clearInterval(this._id);
       this._id = undefined;
+      render(this._tasks, this._options);
     }
 
-    render(this._tasks, this._options);
 
     if (this._options.clearOutput && err === undefined) {
       logUpdate.clear();

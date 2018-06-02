@@ -18,6 +18,10 @@ ll.play = function play() {
   ll.renderer.render();
 };
 
+ll.end = function end(err) {
+  ll.renderer.end(err);
+};
+
 ll.addTask = t => {
   const task = new Task(t);
   if (!ll[t.name]) ll[t.name] = task;
