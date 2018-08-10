@@ -120,7 +120,7 @@ class UpdateRenderer {
     }
 
 
-    if (this._options.clearOutput && err === undefined) {
+    if (err) {
       logUpdate.clear();
     } else {
       logUpdate.done();
