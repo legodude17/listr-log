@@ -36,5 +36,6 @@ module.exports = new Proxy(ll, {
   },
   set(obj, key, val) {
     ll.addTask({ name: key, title: val });
+    return true;
   }
 });

@@ -107,16 +107,14 @@ class UpdateRenderer {
       return;
     }
 
-    this._id = setInterval(() => {
-      render(this._tasks, this._options);
-    }, 100);
+    this._id = setInterval(this.renderNow.bind(this), 100);
   }
 
   end(err) {
     if (this._id) {
       clearInterval(this._id);
       this._id = undefined;
-      render(this._tasks, this._options);
+      this.renderNow();
     }
 
 
@@ -125,6 +123,10 @@ class UpdateRenderer {
     } else {
       logUpdate.done();
     }
+  }
+
+  renderNow() {
+    render(this._tasks, this._options);
   }
 }
 
